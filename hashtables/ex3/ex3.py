@@ -1,10 +1,17 @@
 def intersection(arrays):
-    """
-    YOUR CODE HERE
-    """
-    # Your code here
-
-    return result
+    cache = dict()
+    total = len(arrays)
+    results = []
+    for arr in arrays:
+        for a in arr:
+            if a not in cache:
+                cache[a] = 1
+            else:
+                cache[a] += 1
+    for key, val in cache.items():
+        if val == total:
+            results.append(key)
+    return results
 
 
 if __name__ == "__main__":

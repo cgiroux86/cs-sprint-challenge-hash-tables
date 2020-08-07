@@ -1,9 +1,14 @@
 def has_negatives(a):
-    """
-    YOUR CODE HERE
-    """
-    # Your code here
-
+    cache = dict()
+    result = []
+    for n in a:
+        if abs(n) in cache:
+            cache[abs(n)] += 1
+        else:
+            cache[abs(n)] = 1
+    for key, val in cache.items():
+        if val == 2:
+            result.append(key)
     return result
 
 
