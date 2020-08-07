@@ -9,5 +9,3 @@ def get_indices_of_item_weights(weights, length, limit):
             cache[w] = i
 
     return None
-
-    return None
